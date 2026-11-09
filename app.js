@@ -65,3 +65,7 @@ const html = `
   </body>
 </html>
 `
+/// atividade 1
+app.get('/meunome', (req, res) => {
+  res.send('Meu nome é Gabriele Carolina de Lima Queiroz');
+});
