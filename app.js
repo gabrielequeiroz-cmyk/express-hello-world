@@ -106,3 +106,24 @@ app.post('/series', (req, res) => {
 app.get('/simular-bug', (req, res) => {
   throw new Error('Erro crítico: Falha na conexão com o microsserviço de produção!');
 });
+
+//////atividade 6 
+app.get('/consumir-api', async (req, res) => {
+  try {
+    const urlPublica = 'https://typicode.com';
+    const respostaExterna = await fetch(urlPublica);
+    const dados = await respostaExterna.json();
+    
+    res.json({
+      mensagem: 'Dados consumidos com sucesso!',
+      dados: dados
+    });
+  } catch (error) {
+    res.status(500).json({ erro: 'Não foi possível buscar dados da API externa.' });
+  }
+});
+
+// Inicialização do Servidor
+app.listen(port, () => {
+  console.log(`Servidor rodando com sucesso em http://localhost:${port}`);
+});
