@@ -91,3 +91,13 @@ app.get('/pokemons', (req, res) => {
   ];
   res.json(primeirosPokemons);
 });
+
+//////atividade 4
+app.post('/series', (req, res) => {
+  const minhasSeriesFavoritas = [
+    'The Vampire Diaries',
+    'Stranger Things',
+    'Wandinha'
+  ];
+  res.json(minhasSeriesFavoritas);
+});
