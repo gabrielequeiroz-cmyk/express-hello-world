@@ -101,3 +101,8 @@ app.post('/series', (req, res) => {
   ];
   res.json(minhasSeriesFavoritas);
 });
+
+////atividade 5 
+app.get('/simular-bug', (req, res) => {
+  throw new Error('Erro crítico: Falha na conexão com o microsserviço de produção!');
+});
