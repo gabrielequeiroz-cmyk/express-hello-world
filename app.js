@@ -122,8 +122,3 @@ app.get('/consumir-api', async (req, res) => {
     res.status(500).json({ erro: 'Não foi possível buscar dados da API externa.' });
   }
 });
-
-// Inicialização do Servidor
-app.listen(port, () => {
-  console.log(`Servidor rodando com sucesso em http://localhost:${port}`);
-});
